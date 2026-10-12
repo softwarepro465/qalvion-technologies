@@ -131,7 +131,7 @@ const SV=[
 ["Digital Marketing","Help More People Discover Your Business","We help businesses strengthen their online presence and connect with relevant audiences through digital marketing.","Digital strategy, search visibility, social media campaigns, and campaign analysis where included in the agreed scope.","Build a clearer online presence and make informed marketing decisions.","Discuss Digital Marketing"]];
 const WHY=["Clear communication throughout the project.","Solutions based on your actual requirements.","Quality checks built into the development process.","Practical use of automation and AI where appropriate.","Transparent scope, priorities, and deliverables.","A focus on maintainable and dependable results."];
 const WK=[["Sample SaaS dashboard","Shows how business data such as orders or users can be gathered into one clear screen.",260],["Sample mobile application","Shows how a customer-facing app could look and feel on a phone.",200],["Automated testing dashboard","Shows how test results can be tracked in one place. Uses simulated data.",150],["AI workflow demonstration","Shows how an AI step can read information and pass it to the next task.",290],["API architecture demonstration","Shows how different systems can connect and exchange information.",180]];
-const SOCIAL={Instagram:'',LinkedIn:'',Facebook:''}; // add official profile URLs here
+const SOCIAL={Instagram:'',LinkedIn:'https://www.linkedin.com/company/qalvion-technologies/',Facebook:'https://www.facebook.com/profile.php?id=61595231912446'}; // add official profile URLs here
 const $=s=>document.querySelector(s),sel=$('#sel');
 const esc=s=>s.replace(/&/g,'&amp;');
 // hero headline
@@ -142,7 +142,7 @@ SV.forEach(([t,h,d,ex,b,cta],i)=>{sel.add(new Option(t,t));const e=document.crea
  const l=document.createElement('a');l.href='#svc'+i;l.textContent=t;$('#fs').append(l)});
 WHY.forEach(w=>{const e=document.createElement('div');e.className='glass';e.innerHTML=`<p style="margin:0;color:var(--tx);font-size:16px">✓ ${w}</p>`;$('#why').append(e)});
 WK.forEach(([t,d,h])=>{const e=document.createElement('div');e.className='glass';e.innerHTML=`<div class="thumb" style="background:linear-gradient(135deg,hsl(${h} 70% 30%),#12141d)"></div><span class="badge">CONCEPT / SIMULATED</span><h4>${t}</h4><p>${d}</p>`;$('#wk').append(e)});
-Object.entries(SOCIAL).forEach(([n,u])=>{const a=document.createElement('a');a.textContent={Instagram:'IG',LinkedIn:'in',Facebook:'f'}[n];a.setAttribute('aria-label',n+(u?'':' (link coming soon)'));if(u){a.href=u;a.target='_blank';a.rel='noopener'}else a.title=n+' link coming soon';$('#soc').append(a)});
+Object.entries(SOCIAL).forEach(([n,u])=>{const a=document.createElement('a');a.textContent={Instagram:'IG',LinkedIn:'in',Facebook:'f'}[n];a.setAttribute('aria-label',n+(u?'':' (link coming soon)'));if(u){a.href=u;a.target='_blank';a.rel='noopener noreferrer'}else a.title=n+' link coming soon';$('#soc').append(a)});
 
 // ---- 3D (shared renderer) ----
 const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
