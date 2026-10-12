@@ -280,3 +280,4 @@ $('#f').addEventListener('submit',async ev=>{ev.preventDefault();const f=ev.targ
  try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});m.textContent=r.ok?'Thank you. Your inquiry was received.':'Sending failed. Please try again later or email us directly.'}catch(e){m.textContent='Sending failed. Please try again later or email us directly.'}});
 </script></body></html>
 
+
