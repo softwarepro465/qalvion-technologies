@@ -51,9 +51,18 @@ footer a{color:var(--mu);text-decoration:none;display:block;padding:3px 0}footer
 .soc{display:flex;gap:10px;margin-top:12px}.soc a{width:38px;height:38px;border:1px solid #2b3050;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:600;padding:0}
 .soc a:not([href]){opacity:.5;cursor:not-allowed}
 .copy{max-width:1200px;margin:26px auto 0;font-size:12px}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:14px 0 28px}
+.pc h4{margin:6px 0 4px;font-size:17px}.pc .pr{font-size:28px;font-weight:700}.pc .pr small{display:block;font-size:12px;color:var(--mu);font-weight:400}
+.pc .u{color:var(--mu);font-size:13px}.pc ul{padding-left:18px;margin:12px 0;color:var(--mu);font-size:14px}.pc .btn{margin-top:8px}
+.mo{font-size:11px;letter-spacing:.1em;color:var(--c)}.pc.rec{border-color:var(--v);box-shadow:0 0 0 1px var(--v),0 0 30px #8b5cf633}
+.cat{color:var(--c);letter-spacing:.14em;font-size:12px;margin:28px 0 0;font-weight:600}
+.pc .pr{font-size:22px}.pc .sc{display:flex;gap:16px;margin-top:10px;font-size:13px}.pc .sc a{color:var(--mu);text-decoration:underline}.pc .sc a:hover{color:var(--c)}
+#packages{border-radius:20px;background:radial-gradient(ellipse at top,#8b5cf61a,transparent 70%)}
+dialog{background:#0d0f18;color:var(--tx);border:1px solid #23273d;border-radius:14px;max-width:420px;width:calc(100% - 32px)}dialog::backdrop{background:#000000b3}dialog h3{margin:0 0 6px}dialog .btn{display:block;text-align:center;margin:8px 0}
+details{border-bottom:1px solid #23273d;padding:12px 0}summary{cursor:pointer;font-weight:600}details p{color:var(--mu);margin:8px 0 0}
 </style></head><body>
 <canvas id="gl" aria-hidden="true"></canvas>
-<nav aria-label="Main"><b>QALVION</b><a href="#top">Home</a><a href="#services">Services</a><a href="#qa">QA Demo</a><a href="#process">How We Work</a><a href="#about">Why Us</a><a href="#work">Examples</a><a class="cta" href="#contact">Contact</a><div id="bar"></div></nav>
+<nav aria-label="Main"><b>QALVION</b><a href="#top">Home</a><a href="#services">Services</a><a href="#packages">Packages</a><a href="#qa">QA Demo</a><a href="#process">How We Work</a><a href="#about">Why Us</a><a href="#work">Examples</a><a class="cta" href="#contact">Contact</a><div id="bar"></div></nav>
 <main>
 <section class="hero" id="top" data-mode="hero">
 <div class="tag">BUILD. AUTOMATE. QUALITY-ASSURE.</div>
@@ -67,8 +76,11 @@ footer a{color:var(--mu);text-decoration:none;display:block;padding:3px 0}footer
 <div class="tag">SERVICES</div><h2>One engineering partner for software, automation and quality.</h2>
 <p class="lead">We help businesses build software, use AI practically, automate repetitive work, test digital products, and improve their online presence.</p>
 <div class="grid" id="svc"></div>
+<h2 id='pricing' style='font-size:clamp(24px,3.5vw,38px);margin-top:60px'>Service Pricing</h2><p class='lead' style='font-size:16px'>All prices are in USD and are starting prices, not fixed quotes. Monthly services are labeled separately from one-time projects.</p><div id='pr'></div><p class='note pn'></p>
 </section>
 
+<section id='packages' data-mode='idle'><div class='tag'>PACKAGES</div><h2>Flexible Packages. Clear Deliverables.</h2><p class='lead'>Choose a starting point for your product, then tailor the scope to your business goals.</p><div class='pg' id='pk'></div><p class='note'>Final scope, timeline, and price are confirmed after discovery. Not every advanced feature is included in the starting price.</p><p class='note pn'></p></section>
+<section id='support' data-mode='idle'><div class='tag'>OPTIONAL MONTHLY SUPPORT</div><h2>Ongoing help, when you need it</h2><p class='lead'>Limited-scope monthly engagements. Deliverables, working hours, and response times are defined in the final proposal. They do not include unlimited work or 24/7 availability.</p><div class='pg' id='ms'></div></section>
 <section id="qa" data-mode="qa">
 <div class="tag">QA &amp; TEST AUTOMATION DEMO</div><h2>See testing, made visible.</h2>
 <div class="qa"><div class="glass">
@@ -98,15 +110,19 @@ footer a{color:var(--mu);text-decoration:none;display:block;padding:3px 0}footer
 <div class="grid" id="wk"></div>
 </section>
 
+<section id='faq' data-mode='idle'><div class='tag'>FAQ</div><h2>Pricing questions</h2><div id='fq' style='max-width:720px'></div></section>
 <section id="contact" data-mode="idle">
-<div class="tag">CONTACT</div><h2>Tell Us What You Want to Build</h2>
+<div class="tag">CONTACT &amp; CUSTOM QUOTE</div><h2>Tell Us What You Want to Build</h2>
 <p class="lead">Have an idea, an existing product that needs testing, or a process you want to automate? Tell us a little about it, and let’s discuss the next steps.</p>
 <div class="ct"><a href="mailto:softwarepro465@gmail.com">Email: softwarepro465@gmail.com</a><a href="tel:+923185248541">Call: +92 318 5248541</a><a href="https://wa.me/923185248541" target="_blank" rel="noopener">WhatsApp us</a></div>
 <form id="f" novalidate>
-<label>Your name<input name="name" autocomplete="name"><span class="err"></span></label>
-<label>Work email<input name="email" type="email" autocomplete="email"><span class="err"></span></label>
+<label>Full name<input name="name" autocomplete="name"><span class="err"></span></label>
+<label>Business email<input name="email" type="email" autocomplete="email"><span class="err"></span></label>
 <label>Service you need<select name="service" id="sel"><option value="">Choose a service…</option></select><span class="err"></span></label>
-<label>Tell us about your project<textarea name="details" rows="5"></textarea><span class="err"></span></label>
+<label>Company name (optional)<input name='company' autocomplete='organization'></label>
+<label>Estimated budget<select name='budget'><option>Not sure yet</option><option>Under $500</option><option>$500–$1,000</option><option>$1,000–$2,500</option><option>$2,500–$5,000</option><option>$5,000+</option></select></label>
+<label>Desired timeline<select name='timeline'><option>Flexible</option><option>Within 1 month</option><option>1–3 months</option><option>3+ months</option></select></label>
+<label>Project requirements<textarea name='details' rows='5'></textarea><span class='err'></span></label>
 <div><button class="btn p" type="submit">Send Project Inquiry</button></div>
 <p class="note" id="setup" style="margin:0"></p>
 <div id="msg" role="status"></div>
@@ -119,6 +135,7 @@ footer a{color:var(--mu);text-decoration:none;display:block;padding:3px 0}footer
 <div><h5>Contact</h5><a href="mailto:softwarepro465@gmail.com">softwarepro465@gmail.com</a><a href="tel:+923185248541">+92 318 5248541</a><a href="https://wa.me/923185248541" target="_blank" rel="noopener">WhatsApp</a></div>
 </div><div class="copy">© Qalvion Technologies</div></footer>
 
+<dialog id='ch' aria-labelledby='cht'><h3 id='cht'></h3><p class='note'>How would you like to get in touch?</p><a class='btn p' id='cwa' target='_blank' rel='noopener noreferrer'>Chat on WhatsApp</a><a class='btn' id='cem'>Send an Email</a><a class='btn' id='cq' href='#contact'>Request a Custom Quote</a><button class='btn' id='cx' type='button' style='width:100%'>Close</button></dialog>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const SV=[
@@ -138,11 +155,59 @@ const esc=s=>s.replace(/&/g,'&amp;');
 "Have an Idea? Let’s Build It Better.".split(' ').forEach((w,i)=>{const s=document.createElement('span');s.textContent=w;s.style.animationDelay=(.6+i*.18)+'s';$('#h1').append(s,' ')});
 SV.forEach(([t,h,d,ex,b,cta],i)=>{sel.add(new Option(t,t));const e=document.createElement('div');e.className='glass';e.id='svc'+i;
  e.innerHTML=`<div class="tag">${esc(t).toUpperCase()}</div><h3>${h}</h3><p>${d}</p><p><b>Examples:</b> ${ex}</p><p><b>How it helps:</b> ${b}</p>`;
- const a=document.createElement('a');a.className='btn p';a.href='#contact';a.textContent=cta;a.onclick=()=>sel.value=t;e.append(a);$('#svc').append(e);
+ const a=document.createElement('a');a.className='btn p';a.href='#contact';a.textContent='Discuss Your Project';a.onclick=ev=>{ev.preventDefault();sel.value=t;openCh(t)};e.append(a);$('#svc').append(e);
  const l=document.createElement('a');l.href='#svc'+i;l.textContent=t;$('#fs').append(l)});
 WHY.forEach(w=>{const e=document.createElement('div');e.className='glass';e.innerHTML=`<p style="margin:0;color:var(--tx);font-size:16px">✓ ${w}</p>`;$('#why').append(e)});
 WK.forEach(([t,d,h])=>{const e=document.createElement('div');e.className='glass';e.innerHTML=`<div class="thumb" style="background:linear-gradient(135deg,hsl(${h} 70% 30%),#12141d)"></div><span class="badge">CONCEPT / SIMULATED</span><h4>${t}</h4><p>${d}</p>`;$('#wk').append(e)});
 Object.entries(SOCIAL).forEach(([n,u])=>{const a=document.createElement('a');a.textContent={Instagram:'IG',LinkedIn:'in',Facebook:'f'}[n];a.setAttribute('aria-label',n+(u?'':' (link coming soon)'));if(u){a.href=u;a.target='_blank';a.rel='noopener noreferrer'}else a.title=n+' link coming soon';$('#soc').append(a)});
+
+// ---- pricing ----
+const WA='https://wa.me/923185248541',EM='softwarepro465@gmail.com',ep=encodeURIComponent;
+const msg=(n,p,mo)=>`Hello Qalvion Technologies,\n\nI'm interested in your ${n}${/Package|monthly/.test(n)?'':' service'}${p?`, starting at $${p.toLocaleString('en-US')}${mo?'/month':''}`:''}. I'd like to discuss my requirements, the project scope, and the next steps.\n\nPlease share more information.\n\nThank you.`;
+const wa=(n,p,mo)=>WA+'?text='+ep(msg(n,p,mo));
+const mail=n=>`mailto:${EM}?subject=${ep('Project Inquiry — '+n)}&body=${ep(msg(n))}`;
+const dg=$('#ch');
+function openCh(n,p,mo){$('#cht').textContent=n;$('#cwa').href=wa(n,p,mo);$('#cem').href=mail(n);$('#cq').onclick=()=>{sel.value=n;dg.close()};dg.showModal()}
+$('#cx').onclick=()=>dg.close();
+const SAAS='We help founders and businesses build SaaS products, from scoped MVPs to more advanced platforms. Not every capability below is included at the starting price.';
+const SL=['SaaS MVP development','Custom SaaS web applications','Authentication and role-based access','APIs and backend engineering','Subscription integrations','Admin dashboards','Quality assurance and test automation'];
+const PR=[['Software & Product Engineering',[
+['SaaS Development',799,'per MVP engagement','For a small, clearly scoped SaaS MVP. Larger applications require a custom quote.'],
+['Web Development',399,'per project','For a small business website or landing page with an agreed scope.'],
+['Mobile App Development',999,'per project','For a limited-scope mobile application. Advanced applications require a custom quote.'],
+['Custom Software Development',799,'per project','For tailored software tools and business applications.'],
+['API & Backend Engineering',299,'per engagement','For a clearly defined API, backend feature, or integration task.'],
+['UI/UX Design',199,'per project','For a small, agreed set of screens or a limited design scope.']]],
+['AI & Automation',[
+['AI Solutions & Integration',399,'per engagement','For a limited-scope AI feature or third-party AI integration. Usage fees are separate.'],
+['AI Workflow Automation',299,'per workflow','For a clearly defined workflow using suitable APIs or automation tools. Platform subscriptions are separate.'],
+['Chatbot Development',299,'per chatbot','For a basic chatbot with agreed functionality. Advanced conversational systems require a custom quote.']]],
+['Quality Assurance & Testing',[
+['Manual QA Testing',99,'per testing engagement','For a limited testing scope with documented findings.'],
+['QA Automation',299,'per engagement','For a small, clearly scoped automated test suite or automation task.'],
+['API Testing',149,'per engagement','For a defined collection of API endpoints and test scenarios.'],
+['Mobile App Testing',149,'per engagement','For a limited test scope on agreed devices and operating systems.'],
+['Web Application Testing',149,'per engagement','For functional, usability, and regression testing within an agreed scope.'],
+['SaaS Quality Assurance',199,'per engagement','For a defined SaaS testing cycle covering agreed features and user flows.']]],
+['Digital Growth',[
+['Digital Marketing',199,'per month','For a limited, agreed marketing service. Advertising spend is separate.',1],
+['SEO Services',199,'per month','For a defined SEO scope. Rankings and traffic results are not guaranteed.',1],
+['Data Analytics & Reporting',149,'per engagement','For a basic dashboard, spreadsheet analysis, or reporting task with agreed deliverables.']]]];
+const PK=[['Launch',799,'Best for founders validating an idea.',['Requirements and scope discussion','A limited, agreed SaaS MVP feature set','Responsive UI for agreed screens','Essential backend and database setup','Authentication if included in scope','Basic functional testing','Deployment assistance and handover'],'Discuss Your MVP'],
+['Growth',2499,'Best for startups developing a more complete SaaS product.',['Custom SaaS web application features','Backend and database development','User roles where required','One agreed third-party integration','Basic admin dashboard','Functional and regression testing','Test automation where appropriate','Deployment and technical handover'],'Discuss Growth'],
+['Scale & Custom',5000,'Best for more advanced product requirements.',['Custom SaaS architecture and feature development','API and backend engineering','Multi-tenant functionality where required','Subscription or billing integration where scoped','AI integration or workflow automation where appropriate','QA automation and reliability improvements','Ongoing development under a separate agreement'],'Request a Custom Quote']];
+const MS=[['QA & Testing Support',299],['Development & Maintenance',499],['AI Automation Support',399],['SEO & Digital Marketing Support',199]];
+const FQ=[['Can I request a custom package?','Yes. We can propose a tailored scope based on your business goals and requirements.'],['Are the displayed prices final?','No. They are starting prices. We confirm the scope and final quotation before work begins.'],['Can you work remotely with international clients?','Yes. We can discuss project requirements and remote collaboration with clients in different locations.'],['Do you provide ongoing support?','Ongoing support and maintenance can be arranged under a separate agreement.']];
+const NOTE='All prices are indicative starting rates for clearly scoped engagements. Final pricing depends on project complexity, features, integrations, and delivery requirements. Hosting, paid APIs, advertising spend, licenses, and third-party subscriptions are charged separately unless explicitly included in your proposal.';
+document.querySelectorAll('.pn').forEach(e=>e.textContent=NOTE);
+const addOpt=(g,v)=>{if(![...sel.options].some(o=>o.value===v))g.append(new Option(v,v))};
+const og=l=>{const g=document.createElement('optgroup');g.label=l;sel.append(g);return g};
+function card(n,p,unit,tag,d,list,cta,val,rec,mo,ch){const e=document.createElement('div');e.className='glass pc'+(rec?' rec':'');e.innerHTML=(tag?`<span class='mo'>${tag}</span>`:'')+`<h4>${esc(n)}</h4><div class='pr'>Starting at $${p.toLocaleString('en-US')}${mo?'/month':''}</div><div class='u'>${mo&&unit==='per month'?'Recurring monthly service':unit}</div><p style='margin-top:10px'>${d}</p>`+(list?`<ul>${list.map(x=>`<li>${x}</li>`).join('')}</ul>`:'');const a=document.createElement('a');a.className='btn'+(rec?' p':'');a.href='#contact';a.textContent=cta;a.onclick=ev=>{sel.value=val;if(ch===1){ev.preventDefault();openCh(val,p,mo)}};e.append(a);if(ch===2){const s=document.createElement('div');s.className='sc';s.innerHTML=`<a href='${wa(val,p,0)}' target='_blank' rel='noopener noreferrer'>WhatsApp</a><a href='${mail(val)}'>Email</a>`;e.append(s)}return e}
+const gS=og('Service pricing'),gP=og('Packages'),gM=og('Monthly support');
+PR.forEach(([c,items])=>{const h=document.createElement('div');h.className='cat';h.textContent=c.toUpperCase();const g=document.createElement('div');g.className='pg';items.forEach(([n,p,u,d,m])=>{addOpt(gS,n);g.append(card(n,p,u,m?'MONTHLY · ONGOING':'ONE-TIME PROJECT',n==='SaaS Development'?SAAS:d,n==='SaaS Development'?SL:0,'Discuss Your Project',n,0,m,1))});$('#pr').append(h,g)});
+PK.forEach(([n,p,b,l,cta],i)=>{const v=n+' Package';addOpt(gP,v);$('#pk').append(card(n,p,b,i===1?'RECOMMENDED':'','Starting price. Final scope, timeline, and quotation are agreed with you before work begins.',l,cta,v,i===1,0,2))});
+MS.forEach(([n,p])=>{const v=n+' (monthly)';addOpt(gM,v);$('#ms').append(card(n,p,'per month','MONTHLY SUPPORT','Limited scope. Deliverables, hours, and response times are agreed in the proposal.',0,'Discuss Your Project',v,0,1,1))});
+FQ.forEach(([q,a])=>{const d=document.createElement('details');d.innerHTML=`<summary>${q}</summary><p>${a}</p>`;$('#fq').append(d)});
 
 // ---- 3D (shared renderer) ----
 const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -211,7 +276,7 @@ $('#f').addEventListener('submit',async ev=>{ev.preventDefault();const f=ev.targ
  chk('service',!v('service'),'Please choose the service you need.');chk('details',v('details').length<10,'Please add a few words about your project (at least 10 characters).');
  const m=$('#msg');m.style.display='block';
  if(!ok){m.textContent='Please check the highlighted fields.';return}
- if(!ENDPOINT){m.textContent='Your details look good, but nothing was sent because the form is not connected to a mail service yet. Please email softwarepro465@gmail.com or message us on WhatsApp.';return}
+ if(!ENDPOINT){const b=`Hello Qalvion Technologies,\n\nName: ${v('name')}\nEmail: ${v('email')}\nCompany: ${v('company')||'-'}\nInterested in: ${v('service')}\nBudget: ${v('budget')}\nTimeline: ${v('timeline')}\n\nProject requirements:\n${v('details')}`;m.textContent='Your details look good, but this form is not connected to a mail service, so nothing has been sent yet. To submit your inquiry, use one of the options below. Your details are pre-filled.';m.append(document.createElement('br'));const w=document.createElement('a'),e=document.createElement('a');w.className='btn p';w.textContent='Send via WhatsApp';w.href=WA+'?text='+ep(b);w.target='_blank';w.rel='noopener noreferrer';e.className='btn';e.textContent='Send via Email';e.href=`mailto:${EM}?subject=${ep('Custom Quote Request — '+v('service'))}&body=${ep(b)}`;m.append(w,e);return}
  try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});m.textContent=r.ok?'Thank you. Your inquiry was received.':'Sending failed. Please try again later or email us directly.'}catch(e){m.textContent='Sending failed. Please try again later or email us directly.'}});
 </script></body></html><!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
@@ -266,9 +331,18 @@ footer a{color:var(--mu);text-decoration:none;display:block;padding:3px 0}footer
 .soc{display:flex;gap:10px;margin-top:12px}.soc a{width:38px;height:38px;border:1px solid #2b3050;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:600;padding:0}
 .soc a:not([href]){opacity:.5;cursor:not-allowed}
 .copy{max-width:1200px;margin:26px auto 0;font-size:12px}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:14px 0 28px}
+.pc h4{margin:6px 0 4px;font-size:17px}.pc .pr{font-size:28px;font-weight:700}.pc .pr small{display:block;font-size:12px;color:var(--mu);font-weight:400}
+.pc .u{color:var(--mu);font-size:13px}.pc ul{padding-left:18px;margin:12px 0;color:var(--mu);font-size:14px}.pc .btn{margin-top:8px}
+.mo{font-size:11px;letter-spacing:.1em;color:var(--c)}.pc.rec{border-color:var(--v);box-shadow:0 0 0 1px var(--v),0 0 30px #8b5cf633}
+.cat{color:var(--c);letter-spacing:.14em;font-size:12px;margin:28px 0 0;font-weight:600}
+.pc .pr{font-size:22px}.pc .sc{display:flex;gap:16px;margin-top:10px;font-size:13px}.pc .sc a{color:var(--mu);text-decoration:underline}.pc .sc a:hover{color:var(--c)}
+#packages{border-radius:20px;background:radial-gradient(ellipse at top,#8b5cf61a,transparent 70%)}
+dialog{background:#0d0f18;color:var(--tx);border:1px solid #23273d;border-radius:14px;max-width:420px;width:calc(100% - 32px)}dialog::backdrop{background:#000000b3}dialog h3{margin:0 0 6px}dialog .btn{display:block;text-align:center;margin:8px 0}
+details{border-bottom:1px solid #23273d;padding:12px 0}summary{cursor:pointer;font-weight:600}details p{color:var(--mu);margin:8px 0 0}
 </style></head><body>
 <canvas id="gl" aria-hidden="true"></canvas>
-<nav aria-label="Main"><b>QALVION</b><a href="#top">Home</a><a href="#services">Services</a><a href="#qa">QA Demo</a><a href="#process">How We Work</a><a href="#about">Why Us</a><a href="#work">Examples</a><a class="cta" href="#contact">Contact</a><div id="bar"></div></nav>
+<nav aria-label="Main"><b>QALVION</b><a href="#top">Home</a><a href="#services">Services</a><a href="#packages">Packages</a><a href="#qa">QA Demo</a><a href="#process">How We Work</a><a href="#about">Why Us</a><a href="#work">Examples</a><a class="cta" href="#contact">Contact</a><div id="bar"></div></nav>
 <main>
 <section class="hero" id="top" data-mode="hero">
 <div class="tag">BUILD. AUTOMATE. QUALITY-ASSURE.</div>
@@ -282,8 +356,11 @@ footer a{color:var(--mu);text-decoration:none;display:block;padding:3px 0}footer
 <div class="tag">SERVICES</div><h2>One engineering partner for software, automation and quality.</h2>
 <p class="lead">We help businesses build software, use AI practically, automate repetitive work, test digital products, and improve their online presence.</p>
 <div class="grid" id="svc"></div>
+<h2 id='pricing' style='font-size:clamp(24px,3.5vw,38px);margin-top:60px'>Service Pricing</h2><p class='lead' style='font-size:16px'>All prices are in USD and are starting prices, not fixed quotes. Monthly services are labeled separately from one-time projects.</p><div id='pr'></div><p class='note pn'></p>
 </section>
 
+<section id='packages' data-mode='idle'><div class='tag'>PACKAGES</div><h2>Flexible Packages. Clear Deliverables.</h2><p class='lead'>Choose a starting point for your product, then tailor the scope to your business goals.</p><div class='pg' id='pk'></div><p class='note'>Final scope, timeline, and price are confirmed after discovery. Not every advanced feature is included in the starting price.</p><p class='note pn'></p></section>
+<section id='support' data-mode='idle'><div class='tag'>OPTIONAL MONTHLY SUPPORT</div><h2>Ongoing help, when you need it</h2><p class='lead'>Limited-scope monthly engagements. Deliverables, working hours, and response times are defined in the final proposal. They do not include unlimited work or 24/7 availability.</p><div class='pg' id='ms'></div></section>
 <section id="qa" data-mode="qa">
 <div class="tag">QA &amp; TEST AUTOMATION DEMO</div><h2>See testing, made visible.</h2>
 <div class="qa"><div class="glass">
@@ -313,15 +390,19 @@ footer a{color:var(--mu);text-decoration:none;display:block;padding:3px 0}footer
 <div class="grid" id="wk"></div>
 </section>
 
+<section id='faq' data-mode='idle'><div class='tag'>FAQ</div><h2>Pricing questions</h2><div id='fq' style='max-width:720px'></div></section>
 <section id="contact" data-mode="idle">
-<div class="tag">CONTACT</div><h2>Tell Us What You Want to Build</h2>
+<div class="tag">CONTACT &amp; CUSTOM QUOTE</div><h2>Tell Us What You Want to Build</h2>
 <p class="lead">Have an idea, an existing product that needs testing, or a process you want to automate? Tell us a little about it, and let’s discuss the next steps.</p>
 <div class="ct"><a href="mailto:softwarepro465@gmail.com">Email: softwarepro465@gmail.com</a><a href="tel:+923185248541">Call: +92 318 5248541</a><a href="https://wa.me/923185248541" target="_blank" rel="noopener">WhatsApp us</a></div>
 <form id="f" novalidate>
-<label>Your name<input name="name" autocomplete="name"><span class="err"></span></label>
-<label>Work email<input name="email" type="email" autocomplete="email"><span class="err"></span></label>
+<label>Full name<input name="name" autocomplete="name"><span class="err"></span></label>
+<label>Business email<input name="email" type="email" autocomplete="email"><span class="err"></span></label>
 <label>Service you need<select name="service" id="sel"><option value="">Choose a service…</option></select><span class="err"></span></label>
-<label>Tell us about your project<textarea name="details" rows="5"></textarea><span class="err"></span></label>
+<label>Company name (optional)<input name='company' autocomplete='organization'></label>
+<label>Estimated budget<select name='budget'><option>Not sure yet</option><option>Under $500</option><option>$500–$1,000</option><option>$1,000–$2,500</option><option>$2,500–$5,000</option><option>$5,000+</option></select></label>
+<label>Desired timeline<select name='timeline'><option>Flexible</option><option>Within 1 month</option><option>1–3 months</option><option>3+ months</option></select></label>
+<label>Project requirements<textarea name='details' rows='5'></textarea><span class='err'></span></label>
 <div><button class="btn p" type="submit">Send Project Inquiry</button></div>
 <p class="note" id="setup" style="margin:0"></p>
 <div id="msg" role="status"></div>
@@ -334,6 +415,7 @@ footer a{color:var(--mu);text-decoration:none;display:block;padding:3px 0}footer
 <div><h5>Contact</h5><a href="mailto:softwarepro465@gmail.com">softwarepro465@gmail.com</a><a href="tel:+923185248541">+92 318 5248541</a><a href="https://wa.me/923185248541" target="_blank" rel="noopener">WhatsApp</a></div>
 </div><div class="copy">© Qalvion Technologies</div></footer>
 
+<dialog id='ch' aria-labelledby='cht'><h3 id='cht'></h3><p class='note'>How would you like to get in touch?</p><a class='btn p' id='cwa' target='_blank' rel='noopener noreferrer'>Chat on WhatsApp</a><a class='btn' id='cem'>Send an Email</a><a class='btn' id='cq' href='#contact'>Request a Custom Quote</a><button class='btn' id='cx' type='button' style='width:100%'>Close</button></dialog>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const SV=[
@@ -353,11 +435,59 @@ const esc=s=>s.replace(/&/g,'&amp;');
 "Have an Idea? Let’s Build It Better.".split(' ').forEach((w,i)=>{const s=document.createElement('span');s.textContent=w;s.style.animationDelay=(.6+i*.18)+'s';$('#h1').append(s,' ')});
 SV.forEach(([t,h,d,ex,b,cta],i)=>{sel.add(new Option(t,t));const e=document.createElement('div');e.className='glass';e.id='svc'+i;
  e.innerHTML=`<div class="tag">${esc(t).toUpperCase()}</div><h3>${h}</h3><p>${d}</p><p><b>Examples:</b> ${ex}</p><p><b>How it helps:</b> ${b}</p>`;
- const a=document.createElement('a');a.className='btn p';a.href='#contact';a.textContent=cta;a.onclick=()=>sel.value=t;e.append(a);$('#svc').append(e);
+ const a=document.createElement('a');a.className='btn p';a.href='#contact';a.textContent='Discuss Your Project';a.onclick=ev=>{ev.preventDefault();sel.value=t;openCh(t)};e.append(a);$('#svc').append(e);
  const l=document.createElement('a');l.href='#svc'+i;l.textContent=t;$('#fs').append(l)});
 WHY.forEach(w=>{const e=document.createElement('div');e.className='glass';e.innerHTML=`<p style="margin:0;color:var(--tx);font-size:16px">✓ ${w}</p>`;$('#why').append(e)});
 WK.forEach(([t,d,h])=>{const e=document.createElement('div');e.className='glass';e.innerHTML=`<div class="thumb" style="background:linear-gradient(135deg,hsl(${h} 70% 30%),#12141d)"></div><span class="badge">CONCEPT / SIMULATED</span><h4>${t}</h4><p>${d}</p>`;$('#wk').append(e)});
 Object.entries(SOCIAL).forEach(([n,u])=>{const a=document.createElement('a');a.textContent={Instagram:'IG',LinkedIn:'in',Facebook:'f'}[n];a.setAttribute('aria-label',n+(u?'':' (link coming soon)'));if(u){a.href=u;a.target='_blank';a.rel='noopener noreferrer'}else a.title=n+' link coming soon';$('#soc').append(a)});
+
+// ---- pricing ----
+const WA='https://wa.me/923185248541',EM='softwarepro465@gmail.com',ep=encodeURIComponent;
+const msg=(n,p,mo)=>`Hello Qalvion Technologies,\n\nI'm interested in your ${n}${/Package|monthly/.test(n)?'':' service'}${p?`, starting at $${p.toLocaleString('en-US')}${mo?'/month':''}`:''}. I'd like to discuss my requirements, the project scope, and the next steps.\n\nPlease share more information.\n\nThank you.`;
+const wa=(n,p,mo)=>WA+'?text='+ep(msg(n,p,mo));
+const mail=n=>`mailto:${EM}?subject=${ep('Project Inquiry — '+n)}&body=${ep(msg(n))}`;
+const dg=$('#ch');
+function openCh(n,p,mo){$('#cht').textContent=n;$('#cwa').href=wa(n,p,mo);$('#cem').href=mail(n);$('#cq').onclick=()=>{sel.value=n;dg.close()};dg.showModal()}
+$('#cx').onclick=()=>dg.close();
+const SAAS='We help founders and businesses build SaaS products, from scoped MVPs to more advanced platforms. Not every capability below is included at the starting price.';
+const SL=['SaaS MVP development','Custom SaaS web applications','Authentication and role-based access','APIs and backend engineering','Subscription integrations','Admin dashboards','Quality assurance and test automation'];
+const PR=[['Software & Product Engineering',[
+['SaaS Development',799,'per MVP engagement','For a small, clearly scoped SaaS MVP. Larger applications require a custom quote.'],
+['Web Development',399,'per project','For a small business website or landing page with an agreed scope.'],
+['Mobile App Development',999,'per project','For a limited-scope mobile application. Advanced applications require a custom quote.'],
+['Custom Software Development',799,'per project','For tailored software tools and business applications.'],
+['API & Backend Engineering',299,'per engagement','For a clearly defined API, backend feature, or integration task.'],
+['UI/UX Design',199,'per project','For a small, agreed set of screens or a limited design scope.']]],
+['AI & Automation',[
+['AI Solutions & Integration',399,'per engagement','For a limited-scope AI feature or third-party AI integration. Usage fees are separate.'],
+['AI Workflow Automation',299,'per workflow','For a clearly defined workflow using suitable APIs or automation tools. Platform subscriptions are separate.'],
+['Chatbot Development',299,'per chatbot','For a basic chatbot with agreed functionality. Advanced conversational systems require a custom quote.']]],
+['Quality Assurance & Testing',[
+['Manual QA Testing',99,'per testing engagement','For a limited testing scope with documented findings.'],
+['QA Automation',299,'per engagement','For a small, clearly scoped automated test suite or automation task.'],
+['API Testing',149,'per engagement','For a defined collection of API endpoints and test scenarios.'],
+['Mobile App Testing',149,'per engagement','For a limited test scope on agreed devices and operating systems.'],
+['Web Application Testing',149,'per engagement','For functional, usability, and regression testing within an agreed scope.'],
+['SaaS Quality Assurance',199,'per engagement','For a defined SaaS testing cycle covering agreed features and user flows.']]],
+['Digital Growth',[
+['Digital Marketing',199,'per month','For a limited, agreed marketing service. Advertising spend is separate.',1],
+['SEO Services',199,'per month','For a defined SEO scope. Rankings and traffic results are not guaranteed.',1],
+['Data Analytics & Reporting',149,'per engagement','For a basic dashboard, spreadsheet analysis, or reporting task with agreed deliverables.']]]];
+const PK=[['Launch',799,'Best for founders validating an idea.',['Requirements and scope discussion','A limited, agreed SaaS MVP feature set','Responsive UI for agreed screens','Essential backend and database setup','Authentication if included in scope','Basic functional testing','Deployment assistance and handover'],'Discuss Your MVP'],
+['Growth',2499,'Best for startups developing a more complete SaaS product.',['Custom SaaS web application features','Backend and database development','User roles where required','One agreed third-party integration','Basic admin dashboard','Functional and regression testing','Test automation where appropriate','Deployment and technical handover'],'Discuss Growth'],
+['Scale & Custom',5000,'Best for more advanced product requirements.',['Custom SaaS architecture and feature development','API and backend engineering','Multi-tenant functionality where required','Subscription or billing integration where scoped','AI integration or workflow automation where appropriate','QA automation and reliability improvements','Ongoing development under a separate agreement'],'Request a Custom Quote']];
+const MS=[['QA & Testing Support',299],['Development & Maintenance',499],['AI Automation Support',399],['SEO & Digital Marketing Support',199]];
+const FQ=[['Can I request a custom package?','Yes. We can propose a tailored scope based on your business goals and requirements.'],['Are the displayed prices final?','No. They are starting prices. We confirm the scope and final quotation before work begins.'],['Can you work remotely with international clients?','Yes. We can discuss project requirements and remote collaboration with clients in different locations.'],['Do you provide ongoing support?','Ongoing support and maintenance can be arranged under a separate agreement.']];
+const NOTE='All prices are indicative starting rates for clearly scoped engagements. Final pricing depends on project complexity, features, integrations, and delivery requirements. Hosting, paid APIs, advertising spend, licenses, and third-party subscriptions are charged separately unless explicitly included in your proposal.';
+document.querySelectorAll('.pn').forEach(e=>e.textContent=NOTE);
+const addOpt=(g,v)=>{if(![...sel.options].some(o=>o.value===v))g.append(new Option(v,v))};
+const og=l=>{const g=document.createElement('optgroup');g.label=l;sel.append(g);return g};
+function card(n,p,unit,tag,d,list,cta,val,rec,mo,ch){const e=document.createElement('div');e.className='glass pc'+(rec?' rec':'');e.innerHTML=(tag?`<span class='mo'>${tag}</span>`:'')+`<h4>${esc(n)}</h4><div class='pr'>Starting at $${p.toLocaleString('en-US')}${mo?'/month':''}</div><div class='u'>${mo&&unit==='per month'?'Recurring monthly service':unit}</div><p style='margin-top:10px'>${d}</p>`+(list?`<ul>${list.map(x=>`<li>${x}</li>`).join('')}</ul>`:'');const a=document.createElement('a');a.className='btn'+(rec?' p':'');a.href='#contact';a.textContent=cta;a.onclick=ev=>{sel.value=val;if(ch===1){ev.preventDefault();openCh(val,p,mo)}};e.append(a);if(ch===2){const s=document.createElement('div');s.className='sc';s.innerHTML=`<a href='${wa(val,p,0)}' target='_blank' rel='noopener noreferrer'>WhatsApp</a><a href='${mail(val)}'>Email</a>`;e.append(s)}return e}
+const gS=og('Service pricing'),gP=og('Packages'),gM=og('Monthly support');
+PR.forEach(([c,items])=>{const h=document.createElement('div');h.className='cat';h.textContent=c.toUpperCase();const g=document.createElement('div');g.className='pg';items.forEach(([n,p,u,d,m])=>{addOpt(gS,n);g.append(card(n,p,u,m?'MONTHLY · ONGOING':'ONE-TIME PROJECT',n==='SaaS Development'?SAAS:d,n==='SaaS Development'?SL:0,'Discuss Your Project',n,0,m,1))});$('#pr').append(h,g)});
+PK.forEach(([n,p,b,l,cta],i)=>{const v=n+' Package';addOpt(gP,v);$('#pk').append(card(n,p,b,i===1?'RECOMMENDED':'','Starting price. Final scope, timeline, and quotation are agreed with you before work begins.',l,cta,v,i===1,0,2))});
+MS.forEach(([n,p])=>{const v=n+' (monthly)';addOpt(gM,v);$('#ms').append(card(n,p,'per month','MONTHLY SUPPORT','Limited scope. Deliverables, hours, and response times are agreed in the proposal.',0,'Discuss Your Project',v,0,1,1))});
+FQ.forEach(([q,a])=>{const d=document.createElement('details');d.innerHTML=`<summary>${q}</summary><p>${a}</p>`;$('#fq').append(d)});
 
 // ---- 3D (shared renderer) ----
 const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -426,6 +556,6 @@ $('#f').addEventListener('submit',async ev=>{ev.preventDefault();const f=ev.targ
  chk('service',!v('service'),'Please choose the service you need.');chk('details',v('details').length<10,'Please add a few words about your project (at least 10 characters).');
  const m=$('#msg');m.style.display='block';
  if(!ok){m.textContent='Please check the highlighted fields.';return}
- if(!ENDPOINT){m.textContent='Your details look good, but nothing was sent because the form is not connected to a mail service yet. Please email softwarepro465@gmail.com or message us on WhatsApp.';return}
+ if(!ENDPOINT){const b=`Hello Qalvion Technologies,\n\nName: ${v('name')}\nEmail: ${v('email')}\nCompany: ${v('company')||'-'}\nInterested in: ${v('service')}\nBudget: ${v('budget')}\nTimeline: ${v('timeline')}\n\nProject requirements:\n${v('details')}`;m.textContent='Your details look good, but this form is not connected to a mail service, so nothing has been sent yet. To submit your inquiry, use one of the options below. Your details are pre-filled.';m.append(document.createElement('br'));const w=document.createElement('a'),e=document.createElement('a');w.className='btn p';w.textContent='Send via WhatsApp';w.href=WA+'?text='+ep(b);w.target='_blank';w.rel='noopener noreferrer';e.className='btn';e.textContent='Send via Email';e.href=`mailto:${EM}?subject=${ep('Custom Quote Request — '+v('service'))}&body=${ep(b)}`;m.append(w,e);return}
  try{const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});m.textContent=r.ok?'Thank you. Your inquiry was received.':'Sending failed. Please try again later or email us directly.'}catch(e){m.textContent='Sending failed. Please try again later or email us directly.'}});
 </script></body></html>
